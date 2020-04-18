@@ -1,7 +1,7 @@
 import React from 'react';
 
 import NavBar from './components/NavBar/NavBar';
-import UserCard from './components/UserCard/UserCard';
+import Users from './components/Users/Users';
 
 import './App.css';
 
@@ -10,7 +10,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <NavBar />
-        <UserCard />
+        <Users />
       </div>
     );
   }

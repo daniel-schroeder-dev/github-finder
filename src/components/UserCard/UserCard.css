@@ -13,11 +13,11 @@
   border-radius: 50%;
 }
 
-.user-card__username {
+.user-card__login {
 
 }
 
-.user-card__profile-link {
+.user-card__html-url {
   text-decoration: none;
   background-color: black;
   color: #fff;
@@ -25,7 +25,7 @@
   border-radius: 4px;
 }
 
-.user-card__profile-link:hover {
+.user-card__html-url:hover {
   background-color: #575757;
   color: #cacaca;
 }
