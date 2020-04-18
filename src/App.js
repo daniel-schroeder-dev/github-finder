@@ -1,6 +1,7 @@
 import React from 'react';
 
 import NavBar from './components/NavBar/NavBar';
+import SearchBar from './components/SearchBar/SearchBar';
 import Users from './components/Users/Users';
 
 import './App.css';
@@ -31,6 +32,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <NavBar />
+        <SearchBar />
         <Users users={this.state.users} />
       </div>
     );

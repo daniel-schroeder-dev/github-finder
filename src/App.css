@@ -8,6 +8,8 @@ html {
 
 :root {
   --red: #ff3b58;
+  --btn-hover-bg-color: #575757;
+  --btn-hover-text-color: #cacaca;
 }
 
 body {

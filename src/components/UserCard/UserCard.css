@@ -20,11 +20,11 @@
   text-decoration: none;
   background-color: black;
   color: #fff;
-  padding: 8px 12px;
+  padding: 6px 12px;
   border-radius: 4px;
 }
 
 .user-card__html-url:hover {
-  background-color: #575757;
-  color: #cacaca;
+  background-color: var(--btn-hover-bg-color);
+  color: var(--btn-hover-text-color);
 }
