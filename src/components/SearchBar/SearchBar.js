@@ -1,4 +1,7 @@
 import React from 'react';
+
+import fetchUrl from '../../utils/fetchUrl';
+
 import './SearchBar.css';
 
 class SearchBar extends React.Component {
@@ -11,7 +14,12 @@ class SearchBar extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state.searchValue);
+    fetchUrl('https://api.github.com/search/users?q=' + this.state.searchValue)
+      .then(res => res.json())
+      .then(searchResults => {
+        console.log(searchResults);
+      })
+      .catch(console.error);
     this.setState({ searchValue: '' });
   };
 

@@ -6,7 +6,7 @@ import Users from './components/Users/Users';
 
 import './App.css';
 
-import githubCredentials from './utils/githubCredentials';
+import fetchUrl from './utils/fetchUrl';
 
 class App extends React.Component {
 
@@ -15,12 +15,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch('https://api.github.com/users', {
-      headers: {
-        Accept: 'application/vnd.github.v3+json',
-        Authorization: `Basic ${githubCredentials}`,
-      },
-    })
+    fetchUrl('https://api.github.com/users')
       .then(res => res.json())
       .then(users => {
         this.setState({ users })
