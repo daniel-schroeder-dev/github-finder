@@ -1,0 +1,9 @@
+.nav-bar {
+  background-color: var(--red);
+  padding: 12px;
+}
+
+.nav-bar__site-title {
+  color: white;
+  margin: 0;
+}
