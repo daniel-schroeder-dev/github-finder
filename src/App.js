@@ -6,7 +6,7 @@ import Users from './components/Users/Users';
 
 import './App.css';
 
-const githubCredentials = btoa(`${process.env.REACT_APP_GITHUB_CLIENT_ID}:${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+import githubCredentials from './utils/githubCredentials';
 
 class App extends React.Component {
 
