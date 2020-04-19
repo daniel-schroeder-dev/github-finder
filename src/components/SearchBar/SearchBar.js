@@ -34,7 +34,7 @@ class SearchBar extends React.Component {
     return (
       <form className="search-bar" onSubmit={this.handleSubmit}>
         <div className="search-bar__alert">{ this.state.showAlert && alert }</div> 
-        <input className="search-bar__search-input" type="search" name="search" value={this.state.searchValue} onChange={this.handleChange} placeholder="Search users" />
+        <input className="search-bar__search-input" type="text" name="search" value={this.state.searchValue} onChange={this.handleChange} placeholder="Search users" autoComplete="off" />
         <div>
           <button className="search-bar__search-button" type="submit">Search</button>
           { this.props.showClearUsers && <button className="search-bar__clear-users-button" type="button" onClick={this.props.clearUsers}>Clear</button> }
