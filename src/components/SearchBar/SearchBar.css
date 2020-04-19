@@ -5,6 +5,13 @@
   align-items: center;
 }
 
+.search-bar__alert {
+  color: red;
+  font-size: 18px;
+  height: 24px;
+  margin-bottom: 12px;
+}
+
 .search-bar__search-input {
   padding: 4px;
   width: 200px;

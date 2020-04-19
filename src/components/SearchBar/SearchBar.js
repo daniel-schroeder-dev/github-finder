@@ -22,7 +22,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <form className="search-bar" onSubmit={this.handleSubmit}>
-        { this.state.showAlert && 'Alert!!!' }
+        <div className="search-bar__alert">{ this.state.showAlert && 'You must enter a search term!'}</div> 
         <input className="search-bar__search-input" type="search" name="search" value={this.state.searchValue} onChange={this.handleChange} placeholder="Search users" />
         <div>
           <button className="search-bar__search-button" type="submit">Search</button>
