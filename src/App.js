@@ -43,9 +43,7 @@ class App extends React.Component {
               users={this.state.users}
             />
           </Route>
-          <Route path="/users/:login">
-            <UsersPage />
-          </Route>
+          <Route path="/users/:login" component={UsersPage} />
         </Switch>
       </div>
     );
