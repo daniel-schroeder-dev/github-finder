@@ -1,31 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './UserProfileCard.css';
 
-function UserProfileCard(props) {
+function UserProfileCard({ user }) {
   return (
-    <article>
-      <section>
-        <img src="" alt="" />
-        <h1>Name</h1>
-        <p>Location</p>
-        <p>Hireable</p>
+    <article className="user-profile-card">
+      <section className="user-profile-card__section__main">
+        <img className="user-profile-card__avatar" src={user.avatar_url} alt="user profile" />
+        <h1 className="user-profile-card__name">{user.name}</h1>
+        <p className="user-profile-card__location">Location: {user.location}</p>
+        <p className="user-profile-card__hireable">Hireable: {user.hireable ? 'yes' : 'no'}</p>
       </section>
-      <section>
-        <h2>Bio</h2>
-        <p>Bio text</p>
-        <button type="button">Visit GitHub Profile</button>
-        <p>Username: foo_theB@r</p>
-        <p>Company: Bar Industries</p>
-        <p>Website: www.baz.com</p>
+      <section className="user-profile-card__section__bio">
+        <p className="user-profile-card__bio">{user.bio}</p>
+        <a className="user-profile-card__github-link" href={user.html_url}>Visit GitHub Profile</a>
+        <p className="user-profile-card__username">Username: {user.login}</p>
+        <p className="user-profile-card__company">Company: {user.company}</p>
+        <p className="user-profile-card__website">Website: <a className="user-profile-card__website__link" href={user.blog}>{user.blog}</a></p>
       </section>
-      <section>
-        <p>Followers: 1234</p>
-        <p>Following: 21</p>
-        <p>Public Repos: 481</p>
-        <p>Public Gists: 12</p>
+      <section className="user-profile-card__section__badge">
+        <p>Followers: {user.followers}</p>
+        <p>Following: {user.following}</p>
+        <p>Public Repos: {user.public_repos}</p>
+        <p>Public Gists: {user.public_gists}</p>
       </section>
     </article>
   );
 }
+
+UserProfileCard.propTypes = {
+  user: PropTypes.object.isRequired,
+};
 
 export default UserProfileCard;

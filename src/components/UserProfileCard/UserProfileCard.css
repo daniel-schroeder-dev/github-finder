@@ -1,0 +1,86 @@
+.user-profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+}
+
+.user-profile-card__section__main,
+.user-profile-card__section__badge {
+  /*border: 1px solid black;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main Section */
+
+.user-profile-card__section__main {
+
+}
+
+.user-profile-card__avatar {
+  width: 125px;
+  border-radius: 50%;
+}
+
+.user-profile-card__name {
+  margin: 12px 0 4px 0;
+  font-size: 24px;
+}
+
+.user-profile-card__location {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.user-profile-card__hireable {
+  margin: 0;
+}
+
+/* Bio Section */
+
+.user-profile-card__section__bio {
+  /*border: 1px solid black;*/
+  margin-top: 0;
+}
+
+.user-profile-card__bio {
+
+}
+
+.user-profile-card__github-link {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.user-profile-card__github-link:hover {
+  background-color: var(--btn-hover-bg-color);
+  color: var(--btn-hover-text-color);
+}
+
+.user-profile-card__username,
+.user-profile-card__company,
+.user-profile-card__website {
+  margin: 0;
+  line-height: 1.3;
+}
+
+.user-profile-card__website__link {
+  text-decoration: none;
+  color: #3693ff;
+}
+
+.user-profile-card__section__badge {
+  border: 1px solid black;
+}
+
+
+
+

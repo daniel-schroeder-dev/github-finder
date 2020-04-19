@@ -28,7 +28,7 @@ class UsersPage extends React.Component {
   render() {
     return (
       <main>
-        { this.state.user ? <UserProfileCard /> : <LoadingIcon /> }
+        { this.state.user ? <UserProfileCard user={this.state.user} /> : <LoadingIcon /> }
       </main>
     );
   }
