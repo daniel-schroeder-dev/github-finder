@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import NavBar from './components/NavBar/NavBar';
 import HomePage from './pages/HomePage/HomePage';
+import UsersPage from './pages/UsersPage/UsersPage';
 
 import './App.css';
 
@@ -41,6 +42,9 @@ class App extends React.Component {
               loading={this.state.loading}
               users={this.state.users}
             />
+          </Route>
+          <Route path="/users">
+            <UsersPage />
           </Route>
         </Switch>
       </div>
