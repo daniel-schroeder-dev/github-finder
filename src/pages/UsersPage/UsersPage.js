@@ -1,6 +1,7 @@
 import React from 'react';
 
 import fetchUrl from '../../utils/fetchUrl';
+import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
 
 import './UsersPage.css';
 
@@ -20,7 +21,7 @@ class UsersPage extends React.Component {
   render() {
     return (
       <main>
-        UsersPage for: { this.state.user ? this.state.user.login : null }
+        { this.state.user ? this.state.user.login : <LoadingIcon /> }
       </main>
     );
   }
