@@ -1,10 +1,8 @@
 import React from 'react';
 
 import NavBar from './components/NavBar/NavBar';
-import SearchBar from './components/SearchBar/SearchBar';
-import Users from './components/Users/Users';
 
-import LoadingIcon from './components/LoadingIcon/LoadingIcon';
+import HomePage from './pages/HomePage/HomePage';
 
 import './App.css';
 
@@ -34,13 +32,13 @@ class App extends React.Component {
     return (
       <div className="app">
         <NavBar />
-        <SearchBar 
+        <HomePage 
           handleSubmit={this.handleSubmit} 
           clearUsers={this.clearUsers}
           showClearUsers={this.state.showClearUsers}
+          loading={this.state.loading}
+          users={this.state.users}
         />
-        { this.state.loading && <LoadingIcon /> }
-        <Users users={this.state.users} />
       </div>
     );
   }
