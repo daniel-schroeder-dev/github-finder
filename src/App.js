@@ -1,7 +1,7 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 import NavBar from './components/NavBar/NavBar';
-
 import HomePage from './pages/HomePage/HomePage';
 
 import './App.css';
@@ -32,13 +32,17 @@ class App extends React.Component {
     return (
       <div className="app">
         <NavBar />
-        <HomePage 
-          handleSubmit={this.handleSubmit} 
-          clearUsers={this.clearUsers}
-          showClearUsers={this.state.showClearUsers}
-          loading={this.state.loading}
-          users={this.state.users}
-        />
+        <Switch>
+          <Route path="/" exact>
+            <HomePage 
+              handleSubmit={this.handleSubmit} 
+              clearUsers={this.clearUsers}
+              showClearUsers={this.state.showClearUsers}
+              loading={this.state.loading}
+              users={this.state.users}
+            />
+          </Route>
+        </Switch>
       </div>
     );
   }
