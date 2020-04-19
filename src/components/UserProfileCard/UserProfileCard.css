@@ -2,11 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px;
+  padding: 18px;
 }
 
-.user-profile-card__section__main,
-.user-profile-card__section__badge {
+.user-profile-card__section__main {
   /*border: 1px solid black;*/
   display: flex;
   flex-direction: column;
@@ -78,9 +77,46 @@
 }
 
 .user-profile-card__section__badge {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-top: 18px;
 }
 
+:root {
+  --blue: #0079c4;
+}
+
+.user-profile-card__followers,
+.user-profile-card__following,
+.user-profile-card__repos,
+.user-profile-card__gists {
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin: 0 0 8px 0;
+}
+
+.user-profile-card__followers {
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+.user-profile-card__following {
+  background-color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.user-profile-card__repos {
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+.user-profile-card__gists {
+  background-color: var(--red);
+  border: 1px solid var(--red);
+}
 
 
 

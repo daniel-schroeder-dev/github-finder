@@ -20,10 +20,10 @@ function UserProfileCard({ user }) {
         <p className="user-profile-card__website">Website: <a className="user-profile-card__website__link" href={user.blog}>{user.blog}</a></p>
       </section>
       <section className="user-profile-card__section__badge">
-        <p>Followers: {user.followers}</p>
-        <p>Following: {user.following}</p>
-        <p>Public Repos: {user.public_repos}</p>
-        <p>Public Gists: {user.public_gists}</p>
+        <p className="user-profile-card__followers">Followers: {user.followers}</p>
+        <p className="user-profile-card__following">Following: {user.following}</p>
+        <p className="user-profile-card__repos">Public Repos: {user.public_repos}</p>
+        <p className="user-profile-card__gists">Public Gists: {user.public_gists}</p>
       </section>
     </article>
   );
