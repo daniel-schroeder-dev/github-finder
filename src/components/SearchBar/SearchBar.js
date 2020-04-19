@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
+
 import './SearchBar.css';
 
 class SearchBar extends React.Component {
@@ -20,9 +23,17 @@ class SearchBar extends React.Component {
   };
 
   render() {
+
+    const alert = (
+      <React.Fragment>
+        <FontAwesomeIcon icon={faExclamationCircle} /> 
+        <span className="search-bar__alert__message">You must enter a search term!</span>
+      </React.Fragment>
+    );
+
     return (
       <form className="search-bar" onSubmit={this.handleSubmit}>
-        <div className="search-bar__alert">{ this.state.showAlert && 'You must enter a search term!'}</div> 
+        <div className="search-bar__alert">{ this.state.showAlert && alert }</div> 
         <input className="search-bar__search-input" type="search" name="search" value={this.state.searchValue} onChange={this.handleChange} placeholder="Search users" />
         <div>
           <button className="search-bar__search-button" type="submit">Search</button>

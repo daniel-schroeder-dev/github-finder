@@ -12,6 +12,10 @@
   margin-bottom: 12px;
 }
 
+.search-bar__alert__message {
+  margin-left: 8px;
+}
+
 .search-bar__search-input {
   padding: 4px;
   width: 200px;
