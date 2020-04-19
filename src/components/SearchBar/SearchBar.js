@@ -23,7 +23,7 @@ class SearchBar extends React.Component {
         <input className="search-bar__search-input" type="search" name="search" value={this.state.searchValue} onChange={this.handleChange} placeholder="Search users" />
         <div>
           <button className="search-bar__search-button" type="submit">Search</button>
-          { this.props.users.length ? <button className="search-bar__clear-users-button" type="button" onClick={this.props.clearUsers}>Clear</button> : null }
+          { this.props.showClearUsers && <button className="search-bar__clear-users-button" type="button" onClick={this.props.clearUsers}>Clear</button> }
         </div>
       </form>
     );
@@ -34,7 +34,7 @@ class SearchBar extends React.Component {
 SearchBar.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   clearUsers: PropTypes.func.isRequired,
-  users: PropTypes.array.isRequired,
+  showClearUsers: PropTypes.bool.isRequired,
 };
 
 export default SearchBar;
