@@ -2,6 +2,7 @@ import React from 'react';
 
 import fetchUrl from '../../utils/fetchUrl';
 import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
+import UserProfileCard from '../../components/UserProfileCard/UserProfileCard';
 
 import './UsersPage.css';
 
@@ -18,10 +19,16 @@ class UsersPage extends React.Component {
       .catch(console.error);
   }
 
+  /*
+  left-section: image, name, location
+  right-section: bio, ghprofile link, username, company, website
+  badges: followers, following, public_repos, public_gists
+  */
+
   render() {
     return (
       <main>
-        { this.state.user ? this.state.user.login : <LoadingIcon /> }
+        { this.state.user ? <UserProfileCard /> : <LoadingIcon /> }
       </main>
     );
   }
