@@ -14,20 +14,20 @@ class App extends React.Component {
     users: [],
   };
 
-  componentDidMount() {
-    fetchUrl('https://api.github.com/users')
+  handleSubmit = searchValue => {
+    fetchUrl('https://api.github.com/search/users?q=' + searchValue)
       .then(res => res.json())
-      .then(users => {
-        this.setState({ users })
+      .then(results => {
+        this.setState({ users: results.items });
       })
       .catch(console.error);
-  }
+  };
 
   render() {
     return (
       <div className="app">
         <NavBar />
-        <SearchBar />
+        <SearchBar handleSubmit={this.handleSubmit} />
         <Users users={this.state.users} />
       </div>
     );
