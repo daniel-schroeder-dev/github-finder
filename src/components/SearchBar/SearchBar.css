@@ -10,7 +10,8 @@
   width: 200px;
 }
 
-.search-bar__search-button {
+.search-bar__search-button,
+.search-bar__clear-users-button {
   margin-top: 12px;
   background-color: #000;
   color: #fff;
@@ -19,7 +20,12 @@
   padding: 6px 12px;
 }
 
-.search-bar__search-button:hover {
+.search-bar__clear-users-button {
+  margin-left: 12px;
+}
+
+.search-bar__search-button:hover,
+.search-bar__clear-users-button:hover {
   background-color: var(--btn-hover-bg-color);
   color: var(--btn-hover-text-color);
 }

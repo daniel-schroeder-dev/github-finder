@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ClearUsersButton from '../ClearUsersButton/ClearUsersButton';
-
-
 import './SearchBar.css';
 
 class SearchBar extends React.Component {
@@ -26,7 +23,7 @@ class SearchBar extends React.Component {
         <input className="search-bar__search-input" type="search" name="search" value={this.state.searchValue} onChange={this.handleChange} placeholder="Search users" />
         <div>
           <button className="search-bar__search-button" type="submit">Search</button>
-          { this.props.users.length ? <ClearUsersButton clearUsers={this.props.clearUsers} /> : null }
+          { this.props.users.length ? <button className="search-bar__clear-users-button" type="button" onClick={this.props.clearUsers}>Clear</button> : null }
         </div>
       </form>
     );
