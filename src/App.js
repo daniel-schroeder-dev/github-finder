@@ -43,7 +43,7 @@ class App extends React.Component {
               users={this.state.users}
             />
           </Route>
-          <Route path="/users">
+          <Route path="/users/:login">
             <UsersPage />
           </Route>
         </Switch>
