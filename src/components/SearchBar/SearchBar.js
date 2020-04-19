@@ -7,12 +7,14 @@ class SearchBar extends React.Component {
 
   state = {
     searchValue: '',
+    showAlert: false,
   };
 
-  handleChange = e => this.setState({ searchValue: e.target.value });
+  handleChange = e => this.setState({ searchValue: e.target.value, showAlert: false });
 
   handleSubmit = e => {
     e.preventDefault();
+    if (this.state.searchValue === '') return this.setState({ showAlert: true });
     this.props.handleSubmit(this.state.searchValue);
     this.setState({ searchValue: '' });
   };
@@ -20,6 +22,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <form className="search-bar" onSubmit={this.handleSubmit}>
+        { this.state.showAlert && 'Alert!!!' }
         <input className="search-bar__search-input" type="search" name="search" value={this.state.searchValue} onChange={this.handleChange} placeholder="Search users" />
         <div>
           <button className="search-bar__search-button" type="submit">Search</button>
