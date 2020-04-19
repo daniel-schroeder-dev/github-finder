@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
 import './UserCard.css';
@@ -8,7 +10,7 @@ function UserCard(props) {
     <article className="user-card">
       <img className="user-card__avatar" src={props.avatar_url} alt="user avatar" />
       <h2 className="user-card__login">{props.login}</h2>
-      <a className="user-card__html-url" href={props.html_url}>More</a>
+      <Link className="user-card__html-url" to={`/users/${props.login}`}>More</Link>
     </article>
   );
 }
@@ -16,7 +18,6 @@ function UserCard(props) {
 UserCard.propTypes = {
   avatar_url: PropTypes.string.isRequired,
   login: PropTypes.string.isRequired,
-  html_url: PropTypes.string.isRequired,
 };
 
 export default UserCard;
