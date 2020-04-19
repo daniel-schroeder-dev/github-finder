@@ -1,4 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import ClearUsersButton from '../ClearUsersButton/ClearUsersButton';
+
+
 import './SearchBar.css';
 
 class SearchBar extends React.Component {
@@ -19,11 +24,20 @@ class SearchBar extends React.Component {
     return (
       <form className="search-bar" onSubmit={this.handleSubmit}>
         <input className="search-bar__search-input" type="search" name="search" value={this.state.searchValue} onChange={this.handleChange} placeholder="Search users" />
-        <button className="search-bar__search-button" type="submit">Search</button>
+        <div>
+          <button className="search-bar__search-button" type="submit">Search</button>
+          { this.props.users.length ? <ClearUsersButton clearUsers={this.props.clearUsers} /> : null }
+        </div>
       </form>
     );
   }
 
 }
+
+SearchBar.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  clearUsers: PropTypes.func.isRequired,
+  users: PropTypes.array.isRequired,
+};
 
 export default SearchBar;

@@ -23,11 +23,19 @@ class App extends React.Component {
       .catch(console.error);
   };
 
+  clearUsers = () => {
+    this.setState({ users: [] });
+  };
+
   render() {
     return (
       <div className="app">
         <NavBar />
-        <SearchBar handleSubmit={this.handleSubmit} />
+        <SearchBar 
+          handleSubmit={this.handleSubmit} 
+          clearUsers={this.clearUsers}
+          users={this.state.users}
+        />
         <Users users={this.state.users} />
       </div>
     );
