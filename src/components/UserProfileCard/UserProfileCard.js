@@ -25,6 +25,11 @@ function UserProfileCard({ user, repos }) {
         <p className="user-profile-card__repos">Public Repos: {user.public_repos}</p>
         <p className="user-profile-card__gists">Public Gists: {user.public_gists}</p>
       </section>
+      <section className="user-profile-card__section__repos">
+        <ul>
+          {repos.length && repos.map(repo => (<li key={repo.id}><a href={repo.html_url}>{repo.name}</a></li>))}
+        </ul>
+      </section>
     </article>
   );
 }
