@@ -10,6 +10,7 @@ class UsersPage extends React.Component {
 
   state = {
     user: null,
+    repos: [],
   };
 
   componentDidMount() {
@@ -17,18 +18,16 @@ class UsersPage extends React.Component {
       .then(res => res.json())
       .then(user => this.setState({ user }))
       .catch(console.error);
+    fetchUrl(`https://api.github.com/users/${this.props.match.params.login}/repos?per_page=5&sort=created:asc`)
+      .then(res => res.json())
+      .then(repos => this.setState({ repos }))
+      .catch(console.error);
   }
-
-  /*
-  left-section: image, name, location
-  right-section: bio, ghprofile link, username, company, website
-  badges: followers, following, public_repos, public_gists
-  */
 
   render() {
     return (
       <main>
-        { this.state.user ? <UserProfileCard user={this.state.user} /> : <LoadingIcon /> }
+        { this.state.user ? <UserProfileCard user={this.state.user} repos={this.state.repos} /> : <LoadingIcon /> }
       </main>
     );
   }

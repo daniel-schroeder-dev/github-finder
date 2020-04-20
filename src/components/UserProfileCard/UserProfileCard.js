@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './UserProfileCard.css';
 
-function UserProfileCard({ user }) {
+function UserProfileCard({ user, repos }) {
   return (
     <article className="user-profile-card">
       <section className="user-profile-card__section__main">
@@ -31,6 +31,7 @@ function UserProfileCard({ user }) {
 
 UserProfileCard.propTypes = {
   user: PropTypes.object.isRequired,
+  repos: PropTypes.array.isRequired,
 };
 
 export default UserProfileCard;
