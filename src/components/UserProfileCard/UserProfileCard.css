@@ -14,8 +14,18 @@
 
 /* Main Section */
 
-.user-profile-card__section__main {
+.user-profile-card__section__main,
+.user-profile-card__section__bio,
+.user-profile-card__section__badge {
+  max-width: 310px;
+}
 
+.user-profile-card__section__bio,
+.user-profile-card__section__badge {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .user-profile-card__avatar {
@@ -78,9 +88,6 @@
 
 .user-profile-card__section__badge {
   /*border: 1px solid black;*/
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
   margin-top: 18px;
 }
 
@@ -96,6 +103,7 @@
   padding: 4px 8px;
   border-radius: 4px;
   margin: 0 0 8px 0;
+  min-width: 55%;
 }
 
 .user-profile-card__followers {
